@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CalenderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KindsController;
+use App\Http\Controllers\CalenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,20 +17,12 @@ use App\Http\Controllers\KindsController;
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/post',[CalenderController::class,'index']);
-
-Route::resource('products', KindsController::class);
-
-// Route::get('/x'function () {
-//     return view('index');
-// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

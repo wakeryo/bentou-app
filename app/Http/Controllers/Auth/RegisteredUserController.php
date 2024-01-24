@@ -46,6 +46,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/verify-email');
+        return redirect(RouteServiceProvider::HOME);
     }
 }
