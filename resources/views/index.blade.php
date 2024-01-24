@@ -4,11 +4,11 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Laravel基礎</title>
+     <title>お弁当.com</title>
  </head>
  
  <body>
-     <th>{{ $days }}{{ $now }}<th>
+     <th>{{ $week }}{{ $now }}<th>
  </body>
  
  </html>

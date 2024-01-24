@@ -23,11 +23,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('',CalenderController::class,'')
+Route::get('/post',[CalenderController::class,'index']);
 
-Route::get('/x'function () {
-    return view('index');
-});
+// Route::get('/x'function () {
+//     return view('index');
+// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
